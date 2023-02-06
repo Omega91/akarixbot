@@ -3,6 +3,7 @@ from signal import SIGINT, signal
 from subprocess import check_output, run
 from sys import executable
 from time import time
+from telegram.utils.helpers import mention_html
 
 from psutil import (boot_time, cpu_count, cpu_percent, cpu_freq, disk_usage,
                     net_io_counters, swap_memory, virtual_memory)
@@ -78,15 +79,13 @@ def stats(update, context):
 
 def start(update, context):
     if config_dict['DM_MODE']:
-        start_string = 'Welcome | Z BOT is ready for you.\n' \
+        start_string = 'Hey <b>{uname}</b>, Welcome | Akari is ready for action!\n' \
                        'Thanks for starting me in DM.\n' \
                        'Now I can send all of your files and links here.\n'
     else:
-        start_string = 'Hey, Welcome dear. \n' \
+        start_string = 'Hey <b>{uname}</b>, Welcome | Akari is ready for action! \n' \
                        'I can Mirror all your links To Google Drive! \n' \
-                       'Unfortunately you are not authorized!\n' \
-                       'Please deploy your own BOT!' \
-                       'Created With Love by @Z_Mirror . \n' \
+                       'Created With Love by @spike0en . \n' \
                        'Thank You!'
     sendMessage(start_string, context.bot, update.message)
 
