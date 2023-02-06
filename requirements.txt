@@ -26,3 +26,4 @@ telegraph
 tenacity
 tgCrypto
 xattr
+spedtest-cli
